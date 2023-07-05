@@ -1,22 +1,18 @@
-﻿using System;
+﻿// ライブラリの利用時にパッケージ名を
+using System;
 
 using CsharpExample.Values;
+using CsharpExample.NameSpace; // using ディレクティブを使用すると名前空間で定義された型を完全修飾名前空間を指定せずに使える
 
 public class Program
 {
     // C#5まではコードのエントリーポイントとして Main関数を明示的に作成する必要がある
     public static void Main(string[] args)
     {
-        // //整数型のサンプル動作
-        // IntegerSample integerSample =  new IntegerSample();
-        // integerSample.ExecIntSample();
-        // integerSample.ExecLongSample();
-        // integerSample.ExecCastSample();
+        ValueSamples valueSamples = new ValueSamples();
+        valueSamples.Exec();
 
-        // //浮動小数値型のサンプル動作
-        // FloatSample floatSample = new FloatSample();
-        // floatSample.ExecFloatSample();
-        // floatSample.ExecDoubleSample();
-        // floatSample.ExecDecimalSample();
+        // NameSpaceSamples nameSpaceSamples = new NameSpaceSamples();
+        // nameSpaceSamples.Exec();
     }
 }

@@ -27,6 +27,11 @@ namespace CsharpExample.Values
 
             Console.WriteLine(int.MaxValue); // intの最大値 2147483647
             Console.WriteLine(int.MinValue); // intの最小値 -2147483648
+
+            right += 10;
+            Console.WriteLine(right); // 30
+            right -= 10;
+            Console.WriteLine(right); // 20
         }
 
         public void ExecLongSample()
