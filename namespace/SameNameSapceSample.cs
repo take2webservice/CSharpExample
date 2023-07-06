@@ -1,10 +1,12 @@
 using System;
 
-namespace CsharpExample.NameSpace;
-public class SameNameSapceSample
+namespace CsharpExample.NameSpace
 {
-    public void Exec()
+    public class SameNameSapceSample
     {
-        Console.WriteLine("Called by SameNameSapceSample.Exec()");
+        public void Exec()
+        {
+            Console.WriteLine("Called by SameNameSapceSample.Exec()");
+        }
     }
 }

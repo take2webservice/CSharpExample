@@ -1,10 +1,11 @@
 using System;
 
-namespace CsharpExample.OtherNameSapce;
-public class OtherNameSapceSample
-{
-    public void Exec()
+namespace CsharpExample.OtherNameSapce {
+    public class OtherNameSapceSample
     {
-        Console.WriteLine("Called by OtherNameSapceSample.Exec()");
+        public void Exec()
+        {
+            Console.WriteLine("Called by OtherNameSapceSample.Exec()");
+        }
     }
 }
