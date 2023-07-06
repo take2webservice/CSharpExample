@@ -13,14 +13,18 @@ namespace CsharpExample.Type.ClassSample
 
     class ReadOnlyClassValueSample
     {
+        // static を指定された変数はインスタンスを介しては呼び出せない
+        // ReadOnlyClassValueSample.classValueのように呼び出す
         public readonly static  string classValue = "test";
 
+        // インスタンスメソッドからはクラス変数を呼び出すことができる。
         public void PrintClassValue()
         {
             Console.WriteLine($"現在のclassValue は{classValue}");
         }
     }
 
+    // インスタンスにではなく、クラスに備わるメソッドの説明
     class ClassMethodSample
     {
 
@@ -32,6 +36,8 @@ namespace CsharpExample.Type.ClassSample
 
         public readonly static  string classValue = "test";
 
+        // static を指定されたメソッドはインスタンスを介しては呼び出せない
+        // ReadOnlyClassValueSample.PrintClassValue() のように呼び出す
         public static void PrintClassValue()
         {
             Console.WriteLine($"現在のclassValue は{classValue}");
@@ -40,7 +46,9 @@ namespace CsharpExample.Type.ClassSample
         public static void PrintInstanceValue()
         {
             Console.WriteLine($"現在のclassValue は{classValue}");
-            // this.name; 「キーワード 'this' は、静的プロパティ、静的メソッド、または静的フィールド初期化子では無効です」と怒られる。
+            // this.name;
+            // 上記のコードを書くと警告が出る
+            // 「キーワード 'this' は、静的プロパティ、静的メソッド、または静的フィールド初期化子では無効です」と怒られる。
         }
     }
 }

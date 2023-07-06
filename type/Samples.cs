@@ -64,6 +64,45 @@ namespace CsharpExample.Type
             Console.WriteLine(notComparableClassSample1 == notComparableClassSample2); // False
             Console.WriteLine(notComparableClassSample1.Equals(notComparableClassSample2)); // False
 
+            // new StaticClassSample(); staticクラス 'StaticClassSample' のインスタンスを作成できない。
+            StaticClassSample.PrintName();
+
+            FiveNumbersSampleClass fiveNumbersSampleClass = new FiveNumbersSampleClass();
+            // fiveNumbersSampleClass.CreateNumbers(); 派生クラス以外からは protected メソッドにはアクセスできない
+            Console.WriteLine(String.Join(",", fiveNumbersSampleClass.numbers));
+            TenNumbersSampleClass tenNumbersSampleClass = new TenNumbersSampleClass();
+            Console.WriteLine(String.Join(",", tenNumbersSampleClass.numbers));
+
+            InheritanceBaseSampleClass inheritanceBaseSampleClass = new InheritanceBaseSampleClass("基底クラス", 20);
+            Console.WriteLine(inheritanceBaseSampleClass.CreateIntroduceMessage());
+            DerivationSampleClass derivationSampleClass = new DerivationSampleClass("基底クラス", 20, "日本");
+            Console.WriteLine(derivationSampleClass.CreateIntroduceMessage());
+            Console.WriteLine(derivationSampleClass.CreateIntroduceMessageWithCountry());
+
+            // インターフェースを実装したクラスの利用
+            ImplementInterfaceSampleClass1 implementInterfaceSampleClass1 = new ImplementInterfaceSampleClass1("実装1", 20);
+            ImplementInterfaceSampleClass2 implementInterfaceSampleClass2 = new ImplementInterfaceSampleClass2("実装2", 30, "アメリカ");
+
+            UseInterfaceSampleClass useInterfaceSampleClassWithClass1 = new UseInterfaceSampleClass(implementInterfaceSampleClass1);
+            UseInterfaceSampleClass useInterfaceSampleClassWithClass2 = new UseInterfaceSampleClass(implementInterfaceSampleClass2);
+            useInterfaceSampleClassWithClass1.Greet();
+            useInterfaceSampleClassWithClass2.Greet();
+
+            // Structの利用
+            StructSample structSample1 = new StructSample(1, 1);
+            StructSample structSample2 = new StructSample(2, 2);
+            Console.WriteLine(structSample1);
+            structSample1.Move(-1, -1);
+            Console.WriteLine(structSample1);
+            Console.WriteLine(structSample1.CalculateDistance(structSample2));
+
+            // Enumの利用
+            Console.WriteLine(EnumSample.Value1);
+            // Enumの値に設定した数値はキャストすることで取り出せる。
+            Console.WriteLine((int)EnumSampleWithValue.Value1);
+            // 数値からEnumの値に変換する
+            EnumSampleWithValue enumValue = (EnumSampleWithValue)Enum.ToObject(typeof(EnumSampleWithValue), 200);
+            Console.WriteLine(enumValue);
         }
 
     }
