@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using CsharpExample.Type.ClassSample;
 
 namespace CsharpExample.Type
@@ -11,6 +12,11 @@ namespace CsharpExample.Type
             UninitializedSampleClass uninitializedSampleClass = new UninitializedSampleClass();
             Console.WriteLine(uninitializedSampleClass.name); // 既定値が割り当てられていないので nullが返され空行が表示される
             Console.WriteLine(uninitializedSampleClass.age); // 既定値が割り当てられていないので 0が返される
+
+            // C# 9.0以降はターゲット型が明確な場合は 右辺のクラス名を省略できる
+            UninitializedSampleClass classOmitted = new();
+            Console.WriteLine(classOmitted.GetType());
+
 
             InitializedSampleClass initializedSampleClass = new InitializedSampleClass();
             Console.WriteLine(initializedSampleClass.name); // Sample Name
@@ -101,8 +107,30 @@ namespace CsharpExample.Type
             // Enumの値に設定した数値はキャストすることで取り出せる。
             Console.WriteLine((int)EnumSampleWithValue.Value1);
             // 数値からEnumの値に変換する
-            EnumSampleWithValue enumValue = (EnumSampleWithValue)Enum.ToObject(typeof(EnumSampleWithValue), 200);
-            Console.WriteLine(enumValue);
+            // 事前のチェックが必要
+            if (Enum.IsDefined(typeof(EnumSampleWithValue), 200)){
+                EnumSampleWithValue enumValue = (EnumSampleWithValue)Enum.ToObject(typeof(EnumSampleWithValue), 200);
+                Console.WriteLine(enumValue);
+            }
+
+            // 匿名型の利用
+            var anonymous = new {name = "Anonymous Type", age = 1};
+            Console.WriteLine($"anonymous type name: {anonymous.name}, age: {anonymous.age}");
+
+            // ジェネリクスの利用
+            // クラスの内部で扱うデータ型を外部から受け取る
+            // 一般的にはListやDictionaryに保存する値の型指定で利用。Genericsを受け取るクラス名<型名>で指定
+            List<int> intList = new List<int>();
+            intList.Add(1);
+            intList.Add(2);
+
+            // 自分でジェネリクスを利用するよう実装することもできる
+            GenericsSample<int> genericsSampleWithInt = new GenericsSample<int>(100);
+            genericsSampleWithInt.Print(200);
+
+            GenericsSample<string> genericsSampleWithString = new GenericsSample<string>("some word");
+            genericsSampleWithString.Print("other word");
+
         }
 
     }

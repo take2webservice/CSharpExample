@@ -4,6 +4,7 @@ using System;
 using CsharpExample.Values;
 using CsharpExample.NameSpace; // using ディレクティブを使用すると名前空間で定義された型を完全修飾名前空間を指定せずに使える
 using CsharpExample.Type;
+using CsharpExample.Function;
 
 public class Program
 {
@@ -16,7 +17,10 @@ public class Program
         // NameSpaceSamples nameSpaceSamples = new NameSpaceSamples();
         // nameSpaceSamples.Exec();
 
-        TypeSamples typeSamples = new TypeSamples();
-        typeSamples.Exec();
+        // TypeSamples typeSamples = new TypeSamples();
+        // typeSamples.Exec();
+
+        FunctionSamples functionSamples = new FunctionSamples();
+        functionSamples.Exec();
     }
 }

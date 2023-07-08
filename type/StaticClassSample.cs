@@ -19,7 +19,6 @@ namespace CsharpExample.Type.ClassSample
         //     this.name = name;
         // }
 
-        // ToStringという特別なメソッドを`override`(上書き)してやることで、暗黙的に文字列化できる。
         public static void PrintName()
         {
             Console.WriteLine($"StaticClassSample.name: {name}");
