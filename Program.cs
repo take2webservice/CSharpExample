@@ -11,8 +11,8 @@ public class Program
     // C#5まではコードのエントリーポイントとして Main関数を明示的に作成する必要がある
     public static void Main(string[] args)
     {
-        // ValueSamples valueSamples = new ValueSamples();
-        // valueSamples.Exec();
+        ValueSamples valueSamples = new ValueSamples();
+        valueSamples.Exec();
 
         // NameSpaceSamples nameSpaceSamples = new NameSpaceSamples();
         // nameSpaceSamples.Exec();
