@@ -131,6 +131,17 @@ namespace CsharpExample.Type
             GenericsSample<string> genericsSampleWithString = new GenericsSample<string>("some word");
             genericsSampleWithString.Print("other word");
 
+            // プロパティの利用
+            PropertySampleClass propertySampleClass = new PropertySampleClass("PropertyClass", 10);
+            Console.WriteLine(propertySampleClass.Name);
+            // プロパティにはsetが宣言されていれば代入できる。
+            propertySampleClass.Name = "Renamed PropertyClass";
+            Console.WriteLine(propertySampleClass.IntroductionMessage);
+
+            // Virtualの利用
+            DerivationVirtualSampleClass derivationVirtualSampleClass = new DerivationVirtualSampleClass("With Virtual", 20, "japan");
+            Console.WriteLine(derivationVirtualSampleClass.CreateIntroduceMessage());
+
         }
 
     }
