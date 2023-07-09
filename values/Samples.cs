@@ -5,6 +5,11 @@ namespace CsharpExample.Values
     {
         public void Exec()
         {
+            // 文字のサンプル
+            StringSample stringSample = new StringSample();
+            stringSample.ExecCharSample();
+            stringSample.ExecStringSample();
+
             // //整数型のサンプル動作
             // IntegerSample integerSample =  new IntegerSample();
             // integerSample.ExecIntSample();
@@ -44,9 +49,10 @@ namespace CsharpExample.Values
             // TupleSample tupleSample = new TupleSample();
             // tupleSample.ExecTupleSample();
 
-            DictionarySample dictionarySample = new DictionarySample();
-            dictionarySample.ExecDictionarySample();
-            dictionarySample.ExecHashTableSample();
+            // // 辞書型
+            // DictionarySample dictionarySample = new DictionarySample();
+            // dictionarySample.ExecDictionarySample();
+            // dictionarySample.ExecHashTableSample();
         }
 
     }
