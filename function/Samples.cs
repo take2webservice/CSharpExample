@@ -22,6 +22,8 @@ namespace CsharpExample.Function
             LambdaSample lambdaSample = new LambdaSample();
             lambdaSample.UseLambda();
             lambdaSample.UseLambdaWithArray();
+            Console.WriteLine(lambdaSample.convertIntToString(200));
+            Console.WriteLine(lambdaSample.convertBoolToString(true));
 
             // デリゲートの利用(詳細は実行している関数の中を見てください。)
             DelegateSampleClass delegateSampleClass = new DelegateSampleClass();

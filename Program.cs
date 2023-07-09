@@ -21,13 +21,13 @@ public class Program
         // TypeSamples typeSamples = new TypeSamples();
         // typeSamples.Exec();
 
-        // FunctionSamples functionSamples = new FunctionSamples();
-        // functionSamples.Exec();
+        FunctionSamples functionSamples = new FunctionSamples();
+        functionSamples.Exec();
 
         // ConstSampleClass constSampleClass = new ConstSampleClass();
         // constSampleClass.Exec();
 
-        ControlSamples controlSamples = new ControlSamples();
-        controlSamples.Exec();
+        // ControlSamples controlSamples = new ControlSamples();
+        // controlSamples.Exec();
     }
 }

@@ -25,6 +25,13 @@ namespace CsharpExample.Function{
             Console.WriteLine(multiple(200, 2));
         }
 
+        // ラムダ式は関数内だけでなく、クラス内のメソッド定義にも使える。
+        public Func<int, string> convertIntToString = i => i.ToString();
+
+        // 式形式を1行で書くこともできる。
+        // ラムダ式と違い引数の定義が関数名とくっついている
+        public string convertBoolToString(bool b) => b.ToString();
+
         public void UseLambdaWithArray()
         {
             int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
